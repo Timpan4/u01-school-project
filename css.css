@@ -1,0 +1,284 @@
+/* Colors:
+    Fiord: #3F5363
+    Iron: #D5D9DD
+    Rock Blue: #95AFC9
+    Steel Blue: #488AC1
+    https: //gyazo.com/a362c8440af202d586d22976565a4540 */
+
+@font-face {
+    font-family: Uniform;
+    src: url(Uniform.ttf);
+}
+
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Uniform;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 0.5fr;
+    grid-template-rows: 10% 5% 2fr 1fr 1fr 1fr 5%;
+    background: #488AC1;
+    grid-template-areas:
+        "header header header"
+        "menu menu menu"
+        ". content ."
+        ". about ."
+        ". instagram ."
+        ". video ."
+        "footer footer footer";
+}
+
+header {
+    grid-area: header;
+    background: #D5D9DD;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header img {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: auto;
+}
+
+header h1 {
+    position: relative;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav {
+    padding-left: 0.4%;
+    grid-area: menu;
+    background: #3f5363;
+}
+
+nav ul {
+    height: 100%;
+}
+
+nav li {
+    list-style: none;
+    float: left;
+    width: 6%;
+    height: 100%;
+
+}
+
+nav li a {
+    font-size: 1.2em;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-decoration: none;
+}
+
+nav li a:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.content {
+    display: flex;
+    grid-area: content;
+    flex-wrap: wrap;
+    text-align: center;
+    border-bottom: 2px solid black;
+}
+
+.content h2 {
+    display: block;
+    width: 100%;
+    font-size: 2em;
+    padding-top: 2%;
+}
+
+.tjanst {
+    background: #3f5363;
+    height: auto;
+    width: 40%;
+    margin: 3% 5%;
+    padding: 1%;
+    color: white;
+    border-radius: 2%;
+}
+
+
+.tjanst h3 {
+    font-size: 2em;
+    padding-top: 4%;
+    margin-bottom: 3%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid black;
+}
+
+.tjanst img {
+    padding-top: 4%;
+    width: 100%;
+}
+
+.about {
+    grid-area: about;
+    text-align: center;
+    border-bottom: 2px solid black;
+}
+
+.about embed {
+    height: 210vh;
+    width: 100%;
+    border-radius: 50px;
+}
+
+.about h2 {
+    display: block;
+    width: 100%;
+    font-size: 2em;
+    padding: 2% 0;
+}
+
+
+.instagram {
+    grid-area: instagram;
+    text-align: center;
+    border-bottom: 2px solid black;
+}
+
+.instagram h2 {
+    font-size: 2em;
+    padding-top: 2%;
+}
+
+.instagram iframe {
+    padding: 2% 6%;
+    border: none;
+    overflow: hidden;
+    width: 100%;
+}
+
+.video {
+    grid-area: video;
+    text-align: center;
+    height: 80vh;
+}
+
+.video h2 {
+    font-size: 2em;
+    padding: 2% 0;
+}
+
+.video iframe {
+    width: 80%;
+    height: 80%;
+    border: none;
+}
+
+footer {
+    padding: 0 1%;
+    grid-area: footer;
+    background: linear-gradient(0deg, rgba(63, 83, 99, 1) 80%, rgba(72, 138, 193, 1) 100%);
+
+}
+
+footer p {
+    color: white;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 1299px) {
+    nav li {
+        width: 8%;
+    }
+
+    .about embed {
+        height: 110vh;
+    }
+
+    header h1 {
+        width: 50%;
+    }
+
+}
+
+@media screen and (max-width: 1000px) {
+    body {
+        grid-template-rows: 10% 7% 2fr 1fr 1fr 1fr 5%;
+    }
+
+    nav li {
+        width: 25%;
+    }
+
+    header h1 {
+        display: block;
+        position: absolute;
+        right: 0;
+        width: 50%;
+        font-size: 1.5em;
+    }
+
+    .tjanst {
+        width: 100%;
+    }
+
+    .about embed {
+        height: 100vh;
+    }
+
+    .video {
+        height: 40vh;
+        margin-bottom: 5%;
+    }
+
+
+}
+
+@media screen and (max-width: 500px) {
+    nav li {
+        width: 25%;
+    }
+
+    nav li a {
+        font-size: 1em;
+    }
+
+    header h1 {
+        display: block;
+        position: absolute;
+        right: 0;
+        width: 50%;
+        font-size: 1.2em;
+    }
+
+    .tjanst {
+        width: 100%;
+    }
+
+    .about embed {
+        height: 80vh;
+    }
+
+    .video {
+        height: 40vh;
+        margin-bottom: 5%;
+    }
+}
